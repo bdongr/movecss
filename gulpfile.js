@@ -39,29 +39,29 @@ gulp.task('vendor', function() {
 });
 
 // Compile SCSS
-gulp.task('css:compile', function() {
-    return gulp.src('./scss/**/*.scss')
+gulp.task('css:compile', ['css:minify'], function() {
+    return gulp.src(['./scss/**/*.scss'])
       .pipe(sass.sync({
         outputStyle: 'expanded'
       }).on('error', sass.logError))
       .pipe(rename({
         basename: "move"
       }))
-      .pipe(gulp.dest('./assets/css'))
+      .pipe(gulp.dest('./dist/css/'))
 });
 
 // Minify CSS
-gulp.task('css:minify', ['css:compile'], function() {
+gulp.task('css:minify', function() {
     return gulp.src([
-        './css/*.css',
-        '!./css/*.min.css'
+        './dist/css/*.css',
+        '!./dist/css/*.min.css'
       ])
       .pipe(cleanCSS())
       .pipe(rename({
         basename: "move",
         suffix: '.min'
       }))
-      .pipe(gulp.dest('./assets/css'))
+      .pipe(gulp.dest('./dist/css/'))
       .pipe(browserSync.stream());
 });
 
@@ -79,7 +79,7 @@ gulp.task('js:minify', function() {
         basename: "move",
         suffix: '.min'
       }))
-      .pipe(gulp.dest('./assets/js'))
+      .pipe(gulp.dest('./dist/js/'))
       .pipe(browserSync.stream());
 });
 

@@ -1,0 +1,7 @@
+.mv-button{
+    border: none;
+    @include mv-button-size($mv-button-padding-y, $mv-button-padding-x, $mv-button-border-radius);
+    &.mv-button-primary{
+        background-color: var(--mv-blue);
+    }
+}

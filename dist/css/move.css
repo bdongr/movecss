@@ -1,0 +1,20 @@
+:root {
+  --mv-blue: #3da8f0;
+  --mv-green: #2de27a;
+  --mv-yellow: #f7f12b;
+  --mv-red: #ea4242;
+  --mv-light-grey: #e6ebef;
+  --mv-dark-grey: #7c7e7f;
+  --mv-light: #f8fcff;
+  --mv-dark: #1d1e1e;
+}
+
+.mv-button {
+  border: none;
+  border-radius: 100em;
+  padding: 0.45rem 2.3rem;
+}
+
+.mv-button.mv-button-primary {
+  background-color: var(--mv-blue);
+}

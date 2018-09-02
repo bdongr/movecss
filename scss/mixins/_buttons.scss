@@ -1,0 +1,4 @@
+@mixin mv-button-size($padding-y, $padding-x, $border-radius) {
+    border-radius: $border-radius;
+    padding: $padding-y $padding-x;
+}
