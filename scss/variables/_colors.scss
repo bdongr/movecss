@@ -1,4 +1,4 @@
-$mv-primary: #3da8f0 !default;
+$mv-default: #3da8f0 !default;
 $mv-success: #2de27a !default;
 $mv-alert: #f7f12b !default;
 $mv-error: #ea4242 !default;
@@ -6,18 +6,22 @@ $mv-light-grey: #e6ebef !default;
 $mv-dark-grey: #7c7e7f !default;
 $mv-light: #f8fcff !default;
 $mv-dark: #1d1e1e !default;
+$mv-white: #fdfdfd !default;
+$mv-black: #0a0a0a !default;
 
 $colors: () !default;
 $colors: map-merge(
     (
-        "mv-blue": $mv-primary,
+        "mv-blue": $mv-default,
         "mv-green": $mv-success,
         "mv-yellow": $mv-alert,
         "mv-red": $mv-error,
         "mv-light-grey": $mv-light-grey,
         "mv-dark-grey": $mv-dark-grey,
         "mv-light": $mv-light,
-        "mv-dark": $mv-dark
+        "mv-dark": $mv-dark,
+        "mv-white": $mv-white,
+        "mv-black": $mv-black
     ), 
     $colors 
 );

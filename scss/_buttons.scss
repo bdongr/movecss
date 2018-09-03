@@ -1,7 +1,61 @@
 .mv-button{
+    display: inline-block;
+    position: absolute;
     border: none;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    transition: 200ms;
+    overflow: hidden;
     @include mv-button-size($mv-button-padding-y, $mv-button-padding-x, $mv-button-border-radius);
-    &.mv-button-primary{
+    &:active{
+        outline: none;
+    }
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        font-size: 20px;
+    }
+    //BLUE BUTTON
+    &.default{
         background-color: var(--mv-blue);
+        color: var(--mv-light);
+    }
+    &.default-secondary{
+        background-color: var(--mv-white);
+        color: var(--mv-blue);
+        @include mv-secondary-button-border($mv-secondary-button-border-width, var(--mv-blue));
+    }
+    //GREEN BUTTON
+    &.success{
+        background-color: var(--mv-green);
+        color: var(--mv-light);
+    }
+    &.success-secondary{
+        background-color: var(--mv-white);
+        color: var(--mv-green);
+        @include mv-secondary-button-border($mv-secondary-button-border-width, var(--mv-green));
+    }
+    //YELLOW BUTTON
+    &.alert{
+        background-color: var(--mv-yellow);
+        color: var(--mv-dark);
+    }
+    &.alert-secondary{
+        background-color: var(--mv-white);
+        color: var(--mv-yellow);
+        @include mv-secondary-button-border($mv-secondary-button-border-width, var(--mv-yellow));
+    }
+    //RED BUTTON
+    &.error{
+        background-color: var(--mv-red);
+        color: var(--mv-light);
+    }
+    &.error-secondary{
+        background-color: var(--mv-white);
+        color: var(--mv-red);
+        @include mv-secondary-button-border($mv-secondary-button-border-width, var(--mv-red));
     }
 }
