@@ -1,22 +1,27 @@
 .mv-button{
-    display: inline-block;
-    position: absolute;
+    display: inline-flex;
     border: none;
     cursor: pointer;
     text-align: center;
     vertical-align: middle;
+    justify-content: center;
+    line-height: 25px;
     user-select: none;
-    transition: 200ms;
+    transition-duration: 300ms;
     overflow: hidden;
+    white-space: nowrap;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.25, 2.02);
     @include mv-button-size($mv-button-padding-y, $mv-button-padding-x, $mv-button-border-radius);
-    &:active{
-        outline: none;
-    }
     &:focus{
         outline: none;
     }
     &:hover{
-        font-size: 20px;
+        font-size: 19px;
+    }
+    &:active{
+        transition-duration: 150ms;
+        outline: none;
+        font-size: 16px;
     }
     //BLUE BUTTON
     &.default{
@@ -42,6 +47,7 @@
     &.alert{
         background-color: var(--mv-yellow);
         color: var(--mv-dark);
+        margin-bottom: 0;
     }
     &.alert-secondary{
         background-color: var(--mv-white);
