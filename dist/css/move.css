@@ -86,3 +86,8 @@
   color: var(--mv-red);
   border: 0.1rem solid var(--mv-red);
 }
+
+.mv-button.submit[type="submit"] {
+  background-color: var(--mv-green);
+  color: var(--mv-light);
+}
