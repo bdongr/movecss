@@ -1,0 +1,45 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+
+<style>
+	.tick{
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+	  	animation: dash 5s linear normal;
+	}
+
+	@keyframes dash {
+		from {
+			stroke-dashoffset: 1000;
+		}
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+
+	.error{
+		transform-origin: center;
+		animation-duration: 0.6s;
+		animation-name: draw;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-timing-function: ease-in;
+	}
+
+	@keyframes draw {
+		from {
+			transform: scale(0.0001);
+		}
+
+		to {
+			transform: scale(1);
+		}
+	}
+	
+</style>
+	  <path class="error" fill="#fff" d="M55.303,50c7.709-7.709,15.418-15.417,23.127-23.126c3.423-3.423-1.88-8.726-5.303-5.304
+		C65.418,29.279,57.709,36.988,50,44.697c-7.709-7.709-15.417-15.418-23.126-23.127c-3.423-3.422-8.726,1.881-5.304,5.304
+		C29.279,34.583,36.988,42.291,44.697,50c-7.709,7.709-15.418,15.418-23.127,23.127c-3.422,3.423,1.881,8.726,5.304,5.303
+		C34.583,70.721,42.291,63.012,50,55.303c7.709,7.709,15.418,15.418,23.127,23.127c3.423,3.423,8.726-1.88,5.303-5.303
+		C70.721,65.418,63.012,57.709,55.303,50z"/>
+</svg>

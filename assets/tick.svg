@@ -5,7 +5,7 @@
 	.tick{
 		stroke-dasharray: 1000;
 		stroke-dashoffset: 1000;
-	  	animation: dash 5s linear alternate infinite;
+	  	animation: dash 5s linear normal;
 	}
 
 	@keyframes dash {
@@ -23,12 +23,12 @@
 		clip-path: url(#logo);
 
 		stroke-dasharray: 300;
-		stroke-dashoffset: 300;
+		stroke-dashoffset: 0;
 		animation-duration: 2s;
 		animation-name: draw;
-		animation-iteration-count: infinite;
-		animation-direction: alternate;
-		animation-timing-function: linear;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-timing-function: ease-in-out;
 	}
 
 	@keyframes draw {
@@ -37,7 +37,7 @@
 		}
 
 		to {
-		stroke-dashoffset: -300;
+		stroke-dashoffset: 0;
 		}
 	}
 	

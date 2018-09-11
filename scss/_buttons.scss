@@ -68,8 +68,42 @@
     //submit button
     &.submit{
         &[type="submit"]{
-            background-color: var(--mv-green);
+            background-color: var(--mv-blue);
             color: var(--mv-light);
+            position: relative;
+        }
+
+        &.is-submitting{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        &.is-submited-success{
+            background-color: var(--mv-green);
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        
+        &.is-submited-error{
+            background-color: var(--mv-red);            
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        &>.mv-loading{
+            width: 60%;
+            height: 60%;
+            align-self: center;
+            justify-self: center;
+            position: absolute;
+            transition: 300ms ease-in-out;
+            border-radius: 50%;
+            border-top: 2px solid #fff;
+            border-right: 2px solid transparent;
+            animation: spinner .6s ease-in-out infinite;
+        }
+        @keyframes spinner {
+            to {transform: rotate(360deg);}
         }
     }
 }
