@@ -3,25 +3,28 @@
     border: none;
     cursor: pointer;
     text-align: center;
+    font-family: $mv-button-font;
+    font-weight: $mv-button-font-weight;
+    font-size: $mv-button-font-size-default;
     vertical-align: middle;
     justify-content: center;
-    line-height: 25px;
+    line-height: $mv-button-line-height;
     user-select: none;
-    transition-duration: 300ms;
+    transition-duration: $mv-button-transition-duration-default;
     overflow: hidden;
     white-space: nowrap;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.25, 2.02);
+    transition-timing-function: $mv-button-transition-timing-function;
     @include mv-button-size($mv-button-padding-y, $mv-button-padding-x, $mv-button-border-radius);
     &:focus{
         outline: none;
     }
     &:hover{
-        font-size: 19px;
+        font-size: $mv-button-font-size-hover;
     }
     &:active{
-        transition-duration: 150ms;
+        transition-duration: $mv-button-transition-duration-active;
         outline: none;
-        font-size: 16px;
+        font-size: $mv-button-font-size-active;
     }
     //BLUE BUTTON
     &.default{
@@ -74,33 +77,43 @@
         }
 
         &.is-submitting{
-            padding-left: 5px;
-            padding-right: 5px;
+            padding-left: $mv-button-sumitting-padding;
+            padding-right: $mv-button-sumitting-padding;
+            color: transparent;
+            width: 40px !important;
         }
 
         &.is-submited-success{
             background-color: var(--mv-green);
-            padding-left: 0px;
-            padding-right: 0px;
+            background-image: url(../assets/tick.svg);
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-left: $mv-button-submited-padding;
+            padding-right: $mv-button-submited-padding;
         }
         
         &.is-submited-error{
-            background-color: var(--mv-red);            
-            padding-left: 0px;
-            padding-right: 0px;
+            background-color: var(--mv-red);      
+            background-image: url(../assets/x.svg);
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;      
+            padding-left: $mv-button-submited-padding;
+            padding-right: $mv-button-submited-padding;
         }
 
         &>.mv-loading{
-            width: 60%;
-            height: 60%;
+            width: $mv-button-submit-loading-size;
+            height: $mv-button-submit-loading-size;
             align-self: center;
             justify-self: center;
             position: absolute;
-            transition: 300ms ease-in-out;
+            transition: $mv-button-submit-loading-transition;
             border-radius: 50%;
-            border-top: 2px solid #fff;
-            border-right: 2px solid transparent;
-            animation: spinner .6s ease-in-out infinite;
+            border-top: $mv-button-submit-loading-border-size solid var(--mv-white);
+            border-right: $mv-button-submit-loading-border-size solid transparent;
+            animation: spinner $mv-button-submit-loading-animation;
         }
         @keyframes spinner {
             to {transform: rotate(360deg);}
