@@ -1,7 +1,122 @@
 .mv-button{
+    display: inline-flex;
     border: none;
+    cursor: pointer;
+    text-align: center;
+    font-family: $mv-button-font;
+    font-weight: $mv-button-font-weight;
+    font-size: $mv-button-font-size-default;
+    vertical-align: middle;
+    justify-content: center;
+    line-height: $mv-button-line-height;
+    user-select: none;
+    transition-duration: $mv-button-transition-duration-default;
+    overflow: hidden;
+    white-space: nowrap;
+    transition-timing-function: $mv-button-transition-timing-function;
     @include mv-button-size($mv-button-padding-y, $mv-button-padding-x, $mv-button-border-radius);
-    &.mv-button-primary{
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        font-size: $mv-button-font-size-hover;
+    }
+    &:active{
+        transition-duration: $mv-button-transition-duration-active;
+        outline: none;
+        font-size: $mv-button-font-size-active;
+    }
+    //BLUE BUTTON
+    &.default{
         background-color: var(--mv-blue);
+        color: var(--mv-light);
+    }
+    &.default-secondary{
+        background-color: var(--mv-white);
+        color: var(--mv-blue);
+        @include mv-secondary-button-border($mv-secondary-button-border-width, var(--mv-blue));
+    }
+    //GREEN BUTTON
+    &.success{
+        background-color: var(--mv-green);
+        color: var(--mv-light);
+    }
+    &.success-secondary{
+        background-color: var(--mv-white);
+        color: var(--mv-green);
+        @include mv-secondary-button-border($mv-secondary-button-border-width, var(--mv-green));
+    }
+    //YELLOW BUTTON
+    &.alert{
+        background-color: var(--mv-yellow);
+        color: var(--mv-dark);
+        margin-bottom: 0;
+    }
+    &.alert-secondary{
+        background-color: var(--mv-white);
+        color: var(--mv-yellow);
+        @include mv-secondary-button-border($mv-secondary-button-border-width, var(--mv-yellow));
+    }
+    //RED BUTTON
+    &.error{
+        background-color: var(--mv-red);
+        color: var(--mv-light);
+    }
+    &.error-secondary{
+        background-color: var(--mv-white);
+        color: var(--mv-red);
+        @include mv-secondary-button-border($mv-secondary-button-border-width, var(--mv-red));
+    }
+
+    //submit button
+    &.submit{
+        &[type="submit"]{
+            background-color: var(--mv-blue);
+            color: var(--mv-light);
+            position: relative;
+        }
+
+        &.is-submitting{
+            padding-left: $mv-button-sumitting-padding;
+            padding-right: $mv-button-sumitting-padding;
+            color: transparent;
+            width: 40px !important;
+        }
+
+        &.is-submited-success{
+            background-color: var(--mv-green);
+            background-image: url(../assets/tick.svg);
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-left: $mv-button-submited-padding;
+            padding-right: $mv-button-submited-padding;
+        }
+        
+        &.is-submited-error{
+            background-color: var(--mv-red);      
+            background-image: url(../assets/x.svg);
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;      
+            padding-left: $mv-button-submited-padding;
+            padding-right: $mv-button-submited-padding;
+        }
+
+        &>.mv-loading{
+            width: $mv-button-submit-loading-size;
+            height: $mv-button-submit-loading-size;
+            align-self: center;
+            justify-self: center;
+            position: absolute;
+            transition: $mv-button-submit-loading-transition;
+            border-radius: 50%;
+            border-top: $mv-button-submit-loading-border-size solid var(--mv-white);
+            border-right: $mv-button-submit-loading-border-size solid transparent;
+            animation: spinner $mv-button-submit-loading-animation;
+        }
+        @keyframes spinner {
+            to {transform: rotate(360deg);}
+        }
     }
 }

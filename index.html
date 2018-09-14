@@ -4,12 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/dist/css/move.css">
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./dist/css/move.css">
     <title>Document</title>
 </head>
 <body>
-    <button class="mv-button mv-button-primary">botão</button>
-    <script src="dist/js/move.min.js"></script>
+    <button class="mv-button alert">alerta</button>
+    <button class="mv-button error">erro</button>
+    <button class="mv-button default">padrão</button>
+    <button class="mv-button success">sucesso</button>
+
+    <button class="mv-button submit" type="submit" id="ok">
+        enviar ok
+    </button>
+    <button class="mv-button submit" type="submit" id="error">enviar errado</button>
+
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./dist/js/move.min.js"></script>
+    <script>
+        $('#ok').click(function() {
+            $(this).trigger('submitting');
+            setTimeout(() => {
+                $(this).trigger('submitedSuccess');
+            }, 3000);
+        })
+        $('#error').click(function() {
+            $(this).trigger('submitting');
+            setTimeout(() => {
+                $(this).trigger('submitedError');
+            }, 3000);
+        })
+    </script>
 </body>
 </html>

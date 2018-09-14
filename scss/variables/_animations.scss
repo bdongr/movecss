@@ -1,0 +1,6 @@
+$mv-button-transition-timing-function: cubic-bezier(0.68, -0.55, 0.25, 2.02);
+$mv-button-transition-duration-default: 300ms;
+$mv-button-transition-duration-active: 150ms;
+
+$mv-button-submit-loading-transition: 300ms ease-in-out;
+$mv-button-submit-loading-animation: .6s ease-in-out infinite;

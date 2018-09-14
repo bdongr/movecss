@@ -2,8 +2,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify-es').default;
 var browserSync = require('browser-sync').create();
+var base64 = require('gulp-base64');
 
 // Default task
 gulp.task('default', ['css', 'js', 'vendor']);
@@ -47,6 +48,7 @@ gulp.task('css:compile', ['css:minify'], function() {
       .pipe(rename({
         basename: "move"
       }))
+      .pipe(base64())
       .pipe(gulp.dest('./dist/css/'))
 });
 
