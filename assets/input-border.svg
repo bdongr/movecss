@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="428px" height="82px">
+
+<style>
+	.test{
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 0;
+		clip-path: url(#border);
+		stroke: blue;
+		stroke-width: 3px;
+		stroke-linecap: round;
+	  	animation: dash 2s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-timing-function: ease-in-out;
+	}
+	@keyframes dash {
+		0% {
+			stroke-dashoffset: 1000;
+		}
+		100% {
+			stroke-dashoffset: 0;
+		}
+	}
+</style>
+<g>
+
+	<defs  >
+		<clipPath class="globalsvg" id="border">
+			<path fill="black" d="M389.267,76.164H38.734C19.345,76.164,3.57,60.39,3.57,41c0-19.389,15.774-35.164,35.164-35.164h350.532
+				c19.39,0,35.164,15.774,35.164,35.164C424.431,60.39,408.656,76.164,389.267,76.164z M38.734,7.836
+				C20.448,7.836,5.57,22.713,5.57,41c0,18.287,14.877,33.164,33.164,33.164h350.532c18.287,0,33.164-14.877,33.164-33.164
+				c0-18.287-14.877-33.164-33.164-33.164H38.734z"/>
+		</clipPath>
+	</defs>
+
+	<path fill="none" class="test" stroke-miterlimit="10" d="M423.431,41c0,18.868-15.296,34.164-34.164,34.164
+	H38.734C19.866,75.164,4.57,59.868,4.57,41l0,0c0-18.868,15.296-34.164,34.164-34.164h350.532
+	C408.135,6.836,423.431,22.132,423.431,41L423.431,41z"/>
+</g>
+</svg>

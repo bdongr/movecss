@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body { background: #121725; }
+
+#icon-eye {
+  width: 40px;
+  margin: auto;
+  padding: 20px;
+  resize: horizontal;
+  overflow: auto;
+  /* set the icon color */
+  color: white;
+}
+
+/* for other color settings, use the svg's ids */
+/* 
+#eye-pupil { color: blue; }
+#eye-lashes { color: red; }
+#eye-bottom, #eye-top { color: yellow; } 
+*/
+
+button {
+  background: black;
+  color: white;
+  width: 100px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+}
+
+button:hover { cursor: pointer; }
+
+.eye-open button::after { content: "Close"; }
+
+.eye-close button::after { content: "Open"; }
+    </style>
+</head>
+<body>
+        <div id="wrapper" class="eye-open">
+  
+                <button onclick="toggleClass()"></button>
+              
+                <div id="icon-eye">
+                  <svg 
+                    viewBox="-20 -200 320 400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+              
+                    <style>
+                      #eye {
+                        /* set these to blink faster/slower */
+                        --duration-blink: .2s;
+                        --duration-lashes: .2s;
+                        
+                        /* calculated and fixed vars */
+                        --delay-lashes: var(--duration-blink);
+                        --duration-pupil: .1s;
+                        --delay-pupil: calc(var(--duration-blink)*2/3);
+                      }
+              
+                      #eye-bottom, #eye-top { stroke-linecap: round; }
+              
+                      #eye-top, #eye-lashes { transition: var(--duration-blink) ease-in; }
+              
+                      #eye-pupil {
+                        opacity: 0;
+                        transition: opacity var(--duration-pupil) var(--delay-pupil) ease;
+                      }
+              
+                      /* open state */
+                      .eye-open #eye-top,
+                      .eye-open #eye-lashes {
+                        transform: rotateX(.5turn);
+                        animation: scaleUp var(--duration-lashes) var(--delay-lashes) ease-in-out;
+                      }
+              
+                      .eye-open #eye-pupil { opacity: 1; }
+              
+                      /* close state */
+                      .eye-close #eye-lashes { animation: scaleDown var(--duration-lashes) var(--duration-blink) ease-in-out; }
+              
+                      .eye-close #eye-pupil { opacity: 0; }
+              
+                      /* keyfranes */
+                      @keyframes scaleUp {
+                        50% { transform: rotateX(.5turn) scaleY(1.15); }
+                        to { transform: rotateX(.5turn) scaleY(1); }
+                      }
+              
+                      @keyframes scaleDown {
+                        50% { transform: scaleY(1.15); }
+                        to { transform: scaleY(1); }
+                      }
+                    </style>
+              
+                    <g id="eye" stroke-width="25" fill="none">
+                      <g id="eye-lashes" stroke="currentColor">
+                        <line x1="140" x2="140" y1="90" y2="180" />
+                        <line x1="70"  x2="10"  y1="60" y2="140" />
+                        <line x1="210" x2="270" y1="60" y2="140" />
+                      </g>
+                      
+                      <path id="eye-bottom" d="m0,0q140,190 280,0" stroke="currentColor" />
+                      <path id="eye-top"    d="m0,0q140,190 280,0" stroke="currentColor" />
+              
+                      <circle id="eye-pupil" cx="140" cy="0" r="40" fill="currentColor" stroke="none" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              
+              <!-- https://uimovement.com/ui/5213/show-password/ -->
+
+
+    <script>
+        function toggleClass() {
+            var wrapper = document.getElementById('wrapper');
+            wrapper.classList.toggle('eye-close');
+            wrapper.classList.toggle('eye-open');
+        }
+    </script>
+</body>
+</html>

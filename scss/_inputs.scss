@@ -1,0 +1,106 @@
+.mv-input-container {
+    cursor: text;
+    font-family: $mv-input-font;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &>.mv-label{
+        margin-bottom: 0;
+        margin-top: $mv-label-margin-top;
+        display: block;
+        font-size: $mv-label-font-size;
+        font-weight: $mv-label-font-weight;
+        transition: 0.3s ease-in-out;
+        color: $mv-dark-grey;
+    }
+
+    &>.mv-input{
+        width: 100%;
+        padding-left: $mv-input-padding-left-right;
+        padding-right: $mv-input-padding-left-right;
+        padding-top: $mv-input-padding-top-bottom;
+        padding-bottom: $mv-input-padding-top-bottom;
+        border: 0;
+        border-bottom: $mv-input-border-bottom-width solid $mv-light-grey;
+        font-family: $mv-input-font;
+        color: $mv-dark;
+        transition: border-bottom 0.3s ease-in-out;
+        &:active, &:focus{
+            outline: none            
+        }
+        &:focus{
+            border-bottom: $mv-input-border-bottom-width solid transparent;
+        }
+        &:focus + .input-border::before {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        &:focus ~ .mv-label {
+            color: $mv-default;
+        }
+    }
+
+    &>.input-border::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: $input-border-before-width;
+        border-bottom: $input-border-width-before solid $mv-default;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &>.mv-password-reveal, &>.mv-password-revealing{
+        background-image: url('../assets/eye-closed.svg');
+        position: absolute;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        top: 10px;
+        right: 0;
+    }
+    &>.mv-password-revealing{
+        background-image: url('../assets/eye-opening.svg');
+    }
+
+    //SUCCESS
+    &.mv-input-success{
+        &>.mv-input{
+            &:focus ~ .mv-label {
+                color: $mv-success;
+            }
+        }
+        &>.input-border::before{
+            border-bottom-color: $mv-success;
+        }
+    }
+
+    //ALERT
+    &.mv-input-alert{
+        &>.mv-input{
+            &:focus ~ .mv-label {
+                color: $mv-alert;
+            }
+        }
+        &>.input-border::before{
+            border-bottom-color: $mv-alert;
+        }
+    }
+
+    //ERROR
+    &.mv-input-error{
+        &>.mv-input{
+            &:focus ~ .mv-label {
+                color: $mv-error;
+            }
+        }
+        &>.input-border::before{
+            border-bottom-color: $mv-error;
+        }
+    }
+
+}
