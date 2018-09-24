@@ -53,18 +53,30 @@
         transition: transform 0.3s ease-in-out;
     }
 
-    &>.mv-password-reveal, &>.mv-password-revealing{
-        background-image: url('../assets/eye-closed.svg');
+    &>.mv-password-reveal{
         position: absolute;
-        background-repeat: no-repeat;
+        z-index: 1;
+        // content: url('../assets/eye1.svg');
         cursor: pointer;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         top: 10px;
         right: 0;
-    }
-    &>.mv-password-revealing{
-        background-image: url('../assets/eye-opening.svg');
+        &::after{
+            content: '';
+            background: red;
+            width: 20px;
+            height: 20px;
+        }
+        &>embed{
+            z-index: 0;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            &>*{
+                z-index: -1;
+            }
+        }
     }
 
     //SUCCESS
