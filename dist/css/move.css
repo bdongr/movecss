@@ -213,22 +213,18 @@
   right: 0;
 }
 
-.mv-input-container > .mv-password-reveal::after {
-  content: '';
-  background: red;
-  width: 20px;
-  height: 20px;
+.mv-input-container > .mv-password-reveal svg {
+  position: relative;
+  display: inline-block;
 }
 
-.mv-input-container > .mv-password-reveal > embed {
-  z-index: 0;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-}
-
-.mv-input-container > .mv-password-reveal > embed > * {
-  z-index: -1;
+.mv-input-container > .mv-password-reveal svg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .mv-input-container.mv-input-success > .mv-input:focus ~ .mv-label {

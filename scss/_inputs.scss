@@ -62,20 +62,30 @@
         height: 20px;
         top: 10px;
         right: 0;
-        &::after{
-            content: '';
-            background: red;
-            width: 20px;
-            height: 20px;
+        // &::after{
+        //     content: '';
+        //     background: red;
+        //     width: 20px;
+        //     height: 20px;
+        // }
+        & svg{
+            position: relative;
+            display: inline-block
         }
-        &>embed{
-            z-index: 0;
-            cursor: pointer;
-            width: 20px;
-            height: 20px;
-            &>*{
-                z-index: -1;
-            }
+        & svg::after{
+            // z-index: 0;
+            // cursor: pointer;
+            // width: 20px;
+            // height: 20px;
+            // &>*{
+            //     z-index: -1;
+            // }
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
     }
 

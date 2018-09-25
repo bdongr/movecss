@@ -50,30 +50,31 @@
             <div class="mv-input-container">
                 <input type="password" class="mv-input" id="pass"/>
                 <span class="input-border"></span>
-                <div class="mv-password-reveal" >
-                    <embed src="./assets/eye1.svg" type="">
-                </div>
+                <a href="#" class="mv-password-reveal"  onmouseup="alert('passou')">
+                    <object data="./assets/eye1.svg" id="olho" type="image/svg+xml"></object>
+                </a>
                 <label class="mv-label" for="f">Senha</label>
             </div>
         </div>
     </div>
 
-    <!-- <div id="wrapper" class="eye-open"> -->
-        <!-- <div id="icon-eye"> -->
-            <!-- <img src="./assets/eye.svg"/> -->
-            <!-- <embed src="./assets/eye.svg" type=""> -->
-            <!-- <img src="./assets/eye.svg" alt="" srcset="./assets/eye.svg"> -->
-        <!-- </div> -->
-    <!-- </div> -->
-
-
-    <!-- <label for="inputText" class="mv-label">
-        <input type="text" class="mv-input" id="inputText" placeholder="Input"/>
-    </label> -->
-
-
     <script src="./vendor/jquery/jquery.min.js"></script>
     <script src="./dist/js/move.min.js"></script>
+    <script src="./assets/jquery.svg.es5.min.js"></script>
+    <script>
+        window.onload = function(){
+            var svg = $("#olho").getSVG();
+            console.log(svg);
+            var pass = $("#pass");
+            svg.click(function (params) {
+                if(pass.attr('type')==='password'){
+                    $("#pass").attr('type', 'text')
+                } else{
+                    $("#pass").attr('type', 'password')
+                }
+            })
+        }
+    </script>
     <script>
         $('#ok').click(function() {
             $(this).trigger('submitting');
@@ -88,16 +89,10 @@
             }, 3000);
         })
 
-        $("#olho").click(function () {
-            // $(this).css('background-image', 'url(data:image/svg+xml;base64,PHN2ZyANCiAgICAgIHZpZXdCb3g9Ii0yMCAtMjAwIDMyMCA0MDAiDQogICAgICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciDQogICAgICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+DQoNCiAgICA8c3R5bGU+DQogICAgICAgICNleWUgew0KICAgICAgICAgICAgLyogc2V0IHRoZXNlIHRvIGJsaW5rIGZhc3Rlci9zbG93ZXIgKi8NCiAgICAgICAgICAgIC0tZHVyYXRpb24tYmxpbms6IC41czsNCiAgICAgICAgICAgIC0tZHVyYXRpb24tbGFzaGVzOiAuNXM7DQogICAgICAgICAgICANCiAgICAgICAgICAgIC8qIGNhbGN1bGF0ZWQgYW5kIGZpeGVkIHZhcnMgKi8NCiAgICAgICAgICAgIC0tZGVsYXktbGFzaGVzOiAwczsNCiAgICAgICAgICAgIC0tZHVyYXRpb24tcHVwaWw6IDFzOw0KICAgICAgICAgICAgLS1kZWxheS1wdXBpbDogY2FsYyh2YXIoLS1kdXJhdGlvbi1ibGluaykqMi8zKTsNCiAgICAgICAgfQ0KDQogICAgICAgICNleWUtYm90dG9tLCAjZXllLXRvcCB7IHN0cm9rZS1saW5lY2FwOiByb3VuZDsgfQ0KDQogICAgICAgICNleWUtdG9wLCAjZXllLWxhc2hlcyB7IHRyYW5zaXRpb246IHZhcigtLWR1cmF0aW9uLWJsaW5rKSBlYXNlLWluOyB9DQoNCiAgICAgICAgI2V5ZS1wdXBpbCB7DQogICAgICAgIG9wYWNpdHk6IDA7DQogICAgICAgIHRyYW5zaXRpb246IG9wYWNpdHkgdmFyKC0tZHVyYXRpb24tcHVwaWwpIHZhcigtLWRlbGF5LXB1cGlsKSBlYXNlOw0KICAgICAgICB9DQoNCiAgICAgICAgLyogb3BlbiBzdGF0ZSAqLw0KICAgICAgICAjZXllLXRvcCwjZXllLWxhc2hlcyB7DQogICAgICAgIHRyYW5zZm9ybTogcm90YXRlWCguNXR1cm4pIHNjYWxlWSgxKTs7DQogICAgICAgIGFuaW1hdGlvbjogc2NhbGVVcCB2YXIoLS1kdXJhdGlvbi1sYXNoZXMpIHZhcigtLWRlbGF5LWxhc2hlcykgZWFzZS1pbi1vdXQ7DQogICAgICAgIH0NCg0KICAgICAgICAjZXllLXB1cGlsIHsgb3BhY2l0eTogMTsgYW5pbWF0aW9uOiBzaG93UHVwaWwgdmFyKC0tZHVyYXRpb24tbGFzaGVzKSB2YXIoLS1kZWxheS1sYXNoZXMpIGVhc2UtaW4tb3V0fQ0KDQogICAgICAgIEBrZXlmcmFtZXMgc2hvd1B1cGlsew0KICAgICAgICAgICAgMCUge29wYWNpdHk6IDB9DQogICAgICAgICAgICAxMDAlIHtvcGFjaXR5OiAxfQ0KICAgICAgICB9DQoNCiAgICAgICAgLyogY2xvc2Ugc3RhdGUgKi8NCiAgICAgICAgLmV5ZS1jbG9zZSAjZXllLWxhc2hlcyB7IGFuaW1hdGlvbjogc2NhbGVEb3duIHZhcigtLWR1cmF0aW9uLWxhc2hlcykgdmFyKC0tZHVyYXRpb24tYmxpbmspIGVhc2UtaW4tb3V0OyB9DQoNCiAgICAgICAgLmV5ZS1jbG9zZSAjZXllLXB1cGlsIHsgb3BhY2l0eTogMDsgfQ0KDQogICAgICAgIC8qIGtleWZyYW5lcyAqLw0KICAgICAgICBAa2V5ZnJhbWVzIHNjYWxlVXAgew0KICAgICAgICBmcm9tIHsgdHJhbnNmb3JtOiByb3RhdGVYKDB0dXJuKSBzY2FsZVkoMSk7IH0NCiAgICAgICAgdG8geyB0cmFuc2Zvcm06IHJvdGF0ZVgoLjV0dXJuKSBzY2FsZVkoMSk7IH0NCiAgICAgICAgfQ0KDQogICAgICAgIEBrZXlmcmFtZXMgc2NhbGVEb3duIHsNCiAgICAgICAgNTAlIHsgdHJhbnNmb3JtOiBzY2FsZVkoMS4xNSk7IH0NCiAgICAgICAgdG8geyB0cmFuc2Zvcm06IHNjYWxlWSgxKTsgfQ0KICAgICAgICB9DQogICAgPC9zdHlsZT4gICAgICAgICAgICAgIA0KICAgICAgICAgICAgICANCiAgICA8ZyBpZD0iZXllIiBzdHJva2Utd2lkdGg9IjI1IiBmaWxsPSJub25lIj4NCiAgICAgICAgPGcgaWQ9ImV5ZS1sYXNoZXMiIHN0cm9rZT0iIzdjN2U3ZiI+DQogICAgICAgIDxsaW5lIHgxPSIxNDAiIHgyPSIxNDAiIHkxPSI5MCIgeTI9IjE4MCIgLz4NCiAgICAgICAgPGxpbmUgeDE9IjcwIiAgeDI9IjEwIiAgeTE9IjYwIiB5Mj0iMTQwIiAvPg0KICAgICAgICA8bGluZSB4MT0iMjEwIiB4Mj0iMjcwIiB5MT0iNjAiIHkyPSIxNDAiIC8+DQogICAgICAgIDwvZz4NCiAgICAgICAgDQogICAgICAgIDxwYXRoIGlkPSJleWUtYm90dG9tIiBkPSJtMCwwcTE0MCwxOTAgMjgwLDAiIHN0cm9rZT0iIzdjN2U3ZiIgLz4NCiAgICAgICAgPHBhdGggaWQ9ImV5ZS10b3AiICAgIGQ9Im0wLDBxMTQwLDE5MCAyODAsMCIgc3Ryb2tlPSIjN2M3ZTdmIiAvPg0KDQogICAgICAgIDxjaXJjbGUgaWQ9ImV5ZS1wdXBpbCIgY3g9IjE0MCIgY3k9IjAiIHI9IjQwIiBmaWxsPSIjN2M3ZTdmIiBzdHJva2U9Im5vbmUiIC8+DQogICAgPC9nPg0KDQo8L3N2Zz4=)');
-            // $(this).toggleClass('mv-password-reveal');
-            // $(this).toggleClass('mv-password-revealing');
+        $("#teste").click(function () {
             alert("kjk")
         })
 
-        // function teste(){
-        //     alert('tabem')
-        // }
     </script>
 </body>
 </html>
