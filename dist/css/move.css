@@ -205,25 +205,10 @@
 
 .mv-input-container > .mv-password-reveal {
   position: absolute;
-  z-index: 1;
   cursor: pointer;
   width: 20px;
   height: 20px;
   top: 10px;
-  right: 0;
-}
-
-.mv-input-container > .mv-password-reveal svg {
-  position: relative;
-  display: inline-block;
-}
-
-.mv-input-container > .mv-password-reveal svg::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
   right: 0;
 }
 
@@ -249,4 +234,13 @@
 
 .mv-input-container.mv-input-error > .input-border::before {
   border-bottom-color: #ea4242;
+}
+
+.mv-input-container.mv-password-strengh-indicator {
+  position: absolute;
+  font-weight: 600;
+  font-size: 14px;
+  color: #2de27a;
+  right: 0;
+  display: inline-block;
 }

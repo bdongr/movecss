@@ -55,38 +55,11 @@
 
     &>.mv-password-reveal{
         position: absolute;
-        z-index: 1;
-        // content: url('../assets/eye1.svg');
         cursor: pointer;
-        width: 20px;
-        height: 20px;
+        width: $mv-password-reveal-size;
+        height: $mv-password-reveal-size;
         top: 10px;
         right: 0;
-        // &::after{
-        //     content: '';
-        //     background: red;
-        //     width: 20px;
-        //     height: 20px;
-        // }
-        & svg{
-            position: relative;
-            display: inline-block
-        }
-        & svg::after{
-            // z-index: 0;
-            // cursor: pointer;
-            // width: 20px;
-            // height: 20px;
-            // &>*{
-            //     z-index: -1;
-            // }
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
     }
 
     //SUCCESS
@@ -123,6 +96,15 @@
         &>.input-border::before{
             border-bottom-color: $mv-error;
         }
+    }
+
+    &.mv-password-strengh-indicator{
+        position: absolute;
+        font-weight: 600;
+        font-size: 14px;
+        color: $mv-success;
+        right: 0;
+        display: inline-block;
     }
 
 }

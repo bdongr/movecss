@@ -46,36 +46,34 @@
                 <label class="mv-label" for="f">Email</label>
             </div>
         </div>
+
         <div class="col-md-3">
             <div class="mv-input-container">
                 <input type="password" class="mv-input" id="pass"/>
                 <span class="input-border"></span>
-                <a href="#" class="mv-password-reveal"  onmouseup="alert('passou')">
-                    <object data="./assets/eye1.svg" id="olho" type="image/svg+xml"></object>
-                </a>
-                <label class="mv-label" for="f">Senha</label>
+                <object class="mv-password-reveal" data="./assets/eye.svg" id="revealPass" type="image/svg+xml"></object>
+                <label class="mv-label" for="pass">Senha</label>
             </div>
         </div>
     </div>
 
     <script src="./vendor/jquery/jquery.min.js"></script>
     <script src="./dist/js/move.min.js"></script>
-    <script src="./assets/jquery.svg.es5.min.js"></script>
     <script>
-        window.onload = function(){
-            var svg = $("#olho").getSVG();
-            console.log(svg);
-            var pass = $("#pass");
-            svg.click(function (params) {
-                if(pass.attr('type')==='password'){
-                    $("#pass").attr('type', 'text')
-                } else{
-                    $("#pass").attr('type', 'password')
-                }
-            })
-        }
-    </script>
-    <script>
+
+        var strongPasswordIndicator = '<span class="mv-password-strengh-indicator">forte</span>';
+
+        var strongPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+        $("#pass").keyup(function(evt) {
+            if(strongPassword.test(evt.target.value)){
+                $(this).parent().addClass('mv-input-success');
+                var passParent = $(this).siblings('.mv-label');
+                $(strongPasswordIndicator).insertAfter(passParent);
+                // if($(passParent).children(".mv-password-strengh-indicator")){
+                // } else{
+                // }
+            }
+        })
         $('#ok').click(function() {
             $(this).trigger('submitting');
             setTimeout(() => {
@@ -87,10 +85,6 @@
             setTimeout(() => {
                 $(this).trigger('submitedError');
             }, 3000);
-        })
-
-        $("#teste").click(function () {
-            alert("kjk")
         })
 
     </script>
