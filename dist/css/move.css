@@ -212,6 +212,30 @@
   right: 0;
 }
 
+.mv-input-container > .mv-password-strength {
+  position: absolute;
+  font-weight: 600;
+  font-size: 14px;
+  color: #3da8f0;
+  right: 0;
+  display: none;
+}
+
+.mv-input-container > .mv-password-strength.weak {
+  color: #ea4242;
+  display: inline-block;
+}
+
+.mv-input-container > .mv-password-strength.mid {
+  color: #f7f12b;
+  display: inline-block;
+}
+
+.mv-input-container > .mv-password-strength.strong {
+  color: #2de27a;
+  display: inline-block;
+}
+
 .mv-input-container.mv-input-success > .mv-input:focus ~ .mv-label {
   color: #2de27a;
 }
@@ -234,13 +258,4 @@
 
 .mv-input-container.mv-input-error > .input-border::before {
   border-bottom-color: #ea4242;
-}
-
-.mv-input-container.mv-password-strengh-indicator {
-  position: absolute;
-  font-weight: 600;
-  font-size: 14px;
-  color: #2de27a;
-  right: 0;
-  display: inline-block;
 }

@@ -62,6 +62,27 @@
         right: 0;
     }
 
+    &>.mv-password-strength{
+        position: absolute;
+        font-weight: 600;
+        font-size: 14px;
+        color: $mv-default;
+        right: 0;
+        display: none;
+        &.weak{
+            color: $mv-error;
+            display: inline-block;
+        }
+        &.mid{
+            color: $mv-alert;
+            display: inline-block;
+        }
+        &.strong{
+            color: $mv-success;
+            display: inline-block;
+        }
+    }
+
     //SUCCESS
     &.mv-input-success{
         &>.mv-input{
@@ -96,15 +117,6 @@
         &>.input-border::before{
             border-bottom-color: $mv-error;
         }
-    }
-
-    &.mv-password-strengh-indicator{
-        position: absolute;
-        font-weight: 600;
-        font-size: 14px;
-        color: $mv-success;
-        right: 0;
-        display: inline-block;
     }
 
 }

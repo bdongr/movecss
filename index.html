@@ -52,8 +52,15 @@
                 <input type="password" class="mv-input" id="pass"/>
                 <span class="input-border"></span>
                 <object class="mv-password-reveal" data="./assets/eye.svg" id="revealPass" type="image/svg+xml"></object>
+                <span class="mv-password-strength">forte</span>
                 <label class="mv-label" for="pass">Senha</label>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <input type="checkbox" id="cb" name="cb"/><label for="cb">checkbox</label>
         </div>
     </div>
 
@@ -61,19 +68,20 @@
     <script src="./dist/js/move.min.js"></script>
     <script>
 
-        var strongPasswordIndicator = '<span class="mv-password-strengh-indicator">forte</span>';
+        // var strongPasswordIndicator = '<span class="mv-password-strengh-indicator">forte</span>';
 
-        var strongPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-        $("#pass").keyup(function(evt) {
-            if(strongPassword.test(evt.target.value)){
-                $(this).parent().addClass('mv-input-success');
-                var passParent = $(this).siblings('.mv-label');
-                $(strongPasswordIndicator).insertAfter(passParent);
-                // if($(passParent).children(".mv-password-strengh-indicator")){
-                // } else{
-                // }
-            }
-        })
+        // var strongPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+        // $("#pass").keyup(function(evt) {
+        //     if(strongPassword.test(evt.target.value)){
+        //         $(this).parent().addClass('mv-input-success');
+        //         var passParent = $(this).parent('.mv-input-container');
+        //         $(strongPasswordIndicator).insertAfter(passParent);
+        //         console.log($(passParent).children());
+        //         // if($(passParent).children(".mv-password-strengh-indicator")){
+        //         // } else{
+        //         // }
+        //     }
+        // })
         $('#ok').click(function() {
             $(this).trigger('submitting');
             setTimeout(() => {
