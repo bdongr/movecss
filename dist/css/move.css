@@ -191,6 +191,103 @@
   color: #3da8f0;
 }
 
+.mv-input-container > .mv-input[type="checkbox"] {
+  display: inline;
+  opacity: 0;
+  padding: 0px;
+  width: auto;
+  border: none;
+}
+
+.mv-input-container > .mv-input[type="checkbox"] + .mv-label {
+  display: inline-block;
+  margin: 0;
+  font-weight: normal;
+  margin-left: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.mv-input-container > .mv-input[type="checkbox"] + .mv-label::before {
+  content: '';
+  border: 2px solid #dfdfdf;
+  border-radius: 5px;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+
+.mv-input-container > .mv-input[type="checkbox"] + .mv-label > .tick-checkbox {
+  position: absolute;
+  left: 0;
+  height: 55%;
+}
+
+.mv-input-container > .mv-input[type="checkbox"] + .mv-label > .tick-checkbox-hide {
+  animation: hide-scale;
+  animation-duration: 300ms;
+}
+
+.mv-input-container > .mv-input[type="checkbox"]:focus ~ .mv-label::before {
+  border: 2px solid #3da8f0;
+}
+
+.mv-input-container > .mv-input[type="radio"] {
+  display: inline;
+  opacity: 0;
+  padding: 0px;
+  width: auto;
+  border: none;
+}
+
+.mv-input-container > .mv-input[type="radio"] + .mv-label {
+  display: inline-block;
+  margin: 0;
+  font-weight: normal;
+  margin-left: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.mv-input-container > .mv-input[type="radio"] + .mv-label::before {
+  content: '';
+  border: 2px solid #dfdfdf;
+  border-radius: 100%;
+  left: 0px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+
+.mv-input-container > .mv-input[type="radio"] + .mv-label > .dot-radio {
+  height: 15px;
+  width: 15px;
+  background: #3da8f0;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  display: inline-block;
+  bottom: 14px;
+  animation: show-scale;
+  animation-duration: 300ms;
+}
+
+.mv-input-container > .mv-input[type="radio"] + .mv-label > .dot-radio-hide {
+  animation: hide-scale;
+  animation-duration: 300ms;
+}
+
+.mv-input-container > .mv-input[type="radio"]:focus ~ .mv-label::before {
+  border: 2px solid #3da8f0;
+}
+
 .mv-input-container > .input-border::before {
   content: '';
   position: absolute;
@@ -258,4 +355,22 @@
 
 .mv-input-container.mv-input-error > .input-border::before {
   border-bottom-color: #ea4242;
+}
+
+@keyframes hide-scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes show-scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }

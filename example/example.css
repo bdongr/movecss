@@ -1,0 +1,50 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Open Sans'
+}
+.body-container{
+    background: rgb(19,84,122); /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(19,84,122,1) 0%, rgba(64,193,171,1) 42%, rgba(128,208,199,1) 89%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(19,84,122,1) 0%,rgba(64,193,171,1) 42%,rgba(128,208,199,1) 89%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(19,84,122,1) 0%,rgba(64,193,171,1) 42%,rgba(128,208,199,1) 89%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13547a', endColorstr='#80d0c7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.body-container > .form-container{
+    position: absolute;
+    width: 30%;
+    height: 80%;
+    background: #fff;
+    box-shadow: 0px 0px 40px rgba(28, 28, 28, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.form-container > .title, .gender-title{
+    display: block;
+    margin-top: 20px;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+.gender-title{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.margin-top{
+    margin-top: 10px;
+}
+
+.float-right{
+    float: rigth;
+}

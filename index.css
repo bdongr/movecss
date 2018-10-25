@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
+:root {
+    --dark-blue: #13547a;
+    --green: #40c1ab;
+    --light-green: #80d0c7;
+    --light-grey: #f2f2f2;
+    --medium-grey: #d1d1d1;
+    --dark-grey: #515151;
+}
+body{
+    overflow-x: hidden;
+    font-family: "Open Sans", sans-serif;
+}
+a{
+    color: unset;
+    text-decoration: none;
+}
+a:hover{
+    color: unset;
+    text-decoration: none;
+}
+
+.code-block{
+    background-color: var(--mv-light);
+    width: 70%;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 17px;
+    overflow-x: scroll;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+
+/* DOC */
+
+/* .doc-background{
+    background: #fff;
+}
+
+.doc-container{
+    height: 100%;
+}
+
+.doc-side-nav{
+    width: 17%;
+    height: 100%;
+    position: relative;
+    padding-top: 40px;
+    display: flex;
+    float: left;
+    border-right: 1px solid var(--medium-grey);
+}
+.doc-side-nav>.content{
+    height: 100%;
+    align-self: center;
+}
+.doc-side-nav>.content>.session{
+    float: left;
+    padding: 20px;
+    padding-left: 30px;
+}
+.doc-side-nav>.content>.session>span{
+    font-weight: 700;
+    font-size: 20px;
+}
+.doc-side-nav>.content>.session>ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    text-transform: capitalize;
+}
+.doc-side-nav>.content>.session>ul>li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.doc-side-nav>.content>.separator-right{
+    display: none;
+    width: 2px;
+    height: 80%;
+    position: absolute;
+    right: 0;
+    background: var(--medium-grey)
+}
+
+.doc-container-right{
+    display: inline-block;
+    width: 83%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.doc-container-right > div{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #333;
+} */

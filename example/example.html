@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dist/css/move.min.css">
+    <link rel="stylesheet" href="example.css">
+    <title>Move.CSS | Exemplo</title>
+</head>
+<body>
+    <div class="body-container">
+        <form action="http://rest.learncode.academy/api/brendon/movecss" 
+              class="mv-form form-container" id="cadForm" target="_blank" method="POST">
+            <span class="title">Cadastre-se</span>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mv-input-container">
+                        <input type="text" class="mv-input" name="nome" autocomplete="off" id="nome"/>
+                        <div class="input-border"></div>
+                        <label class="mv-label" for="nome">Nome</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mv-input-container">
+                        <input type="email" autocomplete="off" name="email" class="mv-input" id="email"/>
+                        <div class="input-border"></div>
+                        <label class="mv-label" for="email">Email</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="mv-input-container">
+                        <input type="password" class="mv-input" data-reveal="true" name="senha" id="pass"/>
+                        <span class="input-border"></span>
+                        <span class="mv-password-strength" id="forte">forte</span>
+                        <span class="mv-password-strength" id="media">média</span>
+                        <span class="mv-password-strength" id="fraca">fraca</span>
+                        <label class="mv-label" for="pass">Senha</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="gender-title">Gênero</span>
+                </div>
+                <div class="col-md-6">
+                    <div class="mv-input-container">
+                        <input type="radio" class="mv-input" id="masculino" value="masculino" name="genero"/>
+                        <label class="mv-label" data-label="radio" for="masculino">Masculino</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mv-input-container">
+                        <input type="radio" class="mv-input" id="feminino" value="feminino" name="genero"/>
+                        <label class="mv-label" data-label="radio" for="feminino">Feminino</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row margin-top">
+                <div class="col-md-12">
+                    <div class="mv-input-container">
+                        <input type="checkbox" class="mv-input" id="li" name="li"/>
+                        <label class="mv-label" data-label="checkbox" for="li">Li e aceito os termos de uso</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row margin-top">
+                <div class="col-md-12">
+                    <button type="submit" id="enviar" class="mv-button submit default float-right margin-top">cadastrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+    <script src="../js/move.js"></script>
+    <script>
+        //Minimum eight characters, at least one letter and one number:
+        var weakPassword = new RegExp("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"); 
+        $("#pass").keyup(function(evt) {
+            if(!weakPassword.test(evt.target.value)){
+                $(this).parent().addClass('mv-input-error');
+                $("#fraca").addClass('weak')
+                $("#forte").removeClass('strong')
+                $("#media").removeClass('mid')
+            } else{
+                $(this).parent().removeClass('mv-input-error');
+                $(this).parent().addClass('mv-input-success');
+                $("#fraca").removeClass('weak')
+                $("#forte").addClass('strong')
+                $("#media").removeClass('mid')
+            }
+        })    
+
+        $("#cadForm").submit(function () {
+            $.ajax({
+                url: $('#cadForm').attr('action'),
+                type: 'POST',
+                beforeSend: function () {
+                    $("#enviar").trigger('submitting');                    
+                },
+                success: function(){
+                    $("#enviar").trigger('submitedSuccess');
+                },
+                error: function () {
+                    $("#enviar").trigger('submitedError');
+                }
+            })
+        })
+    </script>
+</body>
+</html>

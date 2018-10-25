@@ -1,5 +1,5 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+	 width="100px" height="100px" viewBox="0 0 100 100"  enable-background="new 0 0 100 100" xml:space="preserve">
 
 <style>
 	.tick{
@@ -22,6 +22,11 @@
 		stroke-linecap: round;
 		clip-path: url(#logo);
 
+		stroke-dasharray: 300;
+		stroke-dashoffset: 300;
+	}
+
+	.pen-animation{
 		stroke-dasharray: 300;
 		stroke-dashoffset: 0;
 		animation-duration: 2s;
@@ -51,7 +56,7 @@
     </clipPath>
   </defs>
   
-  <path fill="none" stroke="#3DA8F0" class="pen" d="M13.899,53.609c9.292,8.421,18.583,16.842,27.874,25.262c1.934,1.752,4.413,1.227,5.89-0.759
+  <path fill="none" class="pen pen-animation" stroke="#3DA8F0" d="M13.899,53.609c9.292,8.421,18.583,16.842,27.874,25.262c1.934,1.752,4.413,1.227,5.89-0.759
 		c13.008-17.479,26.016-34.959,39.025-52.439c2.891-3.885-3.624-7.618-6.477-3.785c-13.008,17.479-26.016,34.96-39.024,52.439
 		c1.963-0.253,3.926-0.506,5.89-0.759c-9.292-8.421-18.583-16.842-27.874-25.262C15.628,45.067,10.308,50.355,13.899,53.609
 		L13.899,53.609z"/>

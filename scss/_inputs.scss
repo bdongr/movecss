@@ -39,6 +39,107 @@
         &:focus ~ .mv-label {
             color: $mv-default;
         }
+
+        //CHECKBOX INPUT 
+        &[type="checkbox"]{
+            display: inline;
+            opacity: 0;
+            padding: 0px;
+            width: auto;
+            border: none;
+
+            & + .mv-label {
+                display: inline-block;
+                margin: 0;
+                font-weight: normal;
+                margin-left: 20px;
+                font-size: 16px;
+                cursor: pointer;
+                padding-bottom: 10px;
+                padding-top: 10px;
+
+                &::before{
+                    content: '';
+                    // background-color: red;
+                    border: 2px solid rgb(223, 223, 223);
+                    border-radius: 5px;
+                    left: 0px;
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    transition: 0.3s ease-in-out;
+                }
+                
+                & > .tick-checkbox{
+                    position: absolute;
+                    left: 0;
+                    height: 55%;
+                }
+                & > .tick-checkbox-hide{
+                    animation: hide-scale;
+                    animation-duration: 300ms;
+                }
+            }
+
+            &:focus ~ .mv-label::before{
+                border: 2px solid $mv-default;
+            }
+        }
+
+
+        //RADIO INPUT
+        &[type="radio"]{
+            display: inline;
+            opacity: 0;
+            padding: 0px;
+            width: auto;
+            border: none;
+
+            & + .mv-label {
+                display: inline-block;
+                margin: 0;
+                font-weight: normal;
+                margin-left: 20px;
+                font-size: 16px;
+                cursor: pointer;
+                padding-bottom: 10px;
+                padding-top: 10px;
+
+                &::before{
+                    content: '';
+                    // background-color: red;
+                    border: 2px solid rgb(223, 223, 223);
+                    border-radius: 100%;
+                    left: 0px;
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    transition: 0.3s ease-in-out;
+                }
+                
+                & > .dot-radio{
+                    height: 15px;
+                    width: 15px;
+                    // z-index: -1;
+                    background: $mv-default;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 5px;
+                    display: inline-block;
+                    bottom: 14px;
+                    animation: show-scale;
+                    animation-duration: 300ms;
+                }
+                & > .dot-radio-hide{
+                    animation: hide-scale;
+                    animation-duration: 300ms;
+                }
+            }
+
+            &:focus ~ .mv-label::before{
+                border: 2px solid $mv-default;
+            }
+        }
     }
 
     &>.input-border::before{
@@ -119,4 +220,13 @@
         }
     }
 
+}
+
+@keyframes hide-scale {
+    from{transform: scale(1)}
+    to{transform: scale(0)}
+}
+@keyframes show-scale {
+    from{transform: scale(0)}
+    to{transform: scale(1)}
 }
