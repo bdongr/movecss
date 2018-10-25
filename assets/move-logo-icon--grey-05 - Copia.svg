@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="377.272px" height="276.704px" viewBox="0 0 377.272 276.704" enable-background="new 0 0 377.272 276.704"
+	 xml:space="preserve">
+
+
+<style>
+	.big{
+		animation: big;
+		animation-duration: 1.4s;
+		animation-iteration-count: infinite;
+		animation-timing-function: cubic-bezier(0.65, -0.08, 0.14, 1.13);
+		transform-origin: center;
+	}
+	@keyframes big{
+		0%{transform: scale(1)}
+		70%{transform: scale(0.7)}
+		100%{transform: scale(1)}
+	}
+
+	.medium{
+		animation: medium;
+		animation-duration: 1.4s;
+		animation-delay: 1.05s;
+		animation-iteration-count: infinite;
+		animation-timing-function: cubic-bezier(0.65, -0.08, 0.14, 1.13);
+		transform-origin: center;
+	}
+
+	@keyframes medium{
+		0%{transform: scale(1)}
+		30%{transform: scale(0.8)}
+		100%{transform: scale(1)}
+	}
+
+	.small{
+		animation: small;
+		animation-duration: 1.4s;
+		animation-delay: 1.115s;
+		animation-iteration-count: infinite;
+		animation-timing-function: cubic-bezier(0.65, -0.08, 0.14, 1.13);
+		transform-origin: bottom;
+	}
+
+	@keyframes small{
+		0%{transform: scale(1)}
+		30%{transform: scale(1.2)}
+		100%{transform: scale(1)}
+	}
+</style>
+
+<path fill="#F2F2F2" class="big" d="M210.742,162.651c0,56.457-45.764,102.23-102.23,102.23c-56.457,0-102.23-45.773-102.23-102.23
+	c0-56.459,45.773-102.23,102.23-102.23C164.979,60.421,210.742,106.192,210.742,162.651z"/>
+<path fill="#F2F2F2" class="small" d="M309.803,227.819c0,24.473-19.84,44.313-44.314,44.313c-24.477,0-44.316-19.84-44.316-44.313
+	c0-24.479,19.84-44.316,44.316-44.316C289.963,183.503,309.803,203.341,309.803,227.819z"/>
+<path fill="#F2F2F2" class="medium" d="M370.107,83.856c0,43.516-35.289,78.795-78.791,78.795c-43.521,0-78.807-35.279-78.807-78.795
+	s35.285-78.795,78.807-78.795C334.818,5.062,370.107,40.341,370.107,83.856z"/>
+</svg>

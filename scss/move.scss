@@ -1,5 +1,9 @@
 @import "./mixins/mixins";
+@import "./variables/fonts";
+@import "./variables/animations";
 @import "./variables/buttons";
+@import "./variables/inputs";
 @import "./variables/colors";
 @import "root";
 @import "buttons";
+@import "inputs";

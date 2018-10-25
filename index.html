@@ -4,12 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/dist/css/move.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./dist/css/move.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./menu.css">
+    <link rel="stylesheet" href="./main.css">
+    <title>Move.CSS</title>
 </head>
 <body>
-    <button class="mv-button mv-button-primary">botão</button>
-    <script src="dist/js/move.min.js"></script>
+    <!-- <div>
+        <button class="mv-button alert">alerta</button>
+        <button class="mv-button error">erro</button>
+        <button class="mv-button default">padrão</button>
+        <button class="mv-button success">sucesso</button>
+    
+        <button class="mv-button submit" type="submit" id="ok">
+            enviar ok
+        </button>
+        <button class="mv-button submit" type="submit" id="error">enviar errado</button>
+    
+    
+        <br><br>
+    
+        <div class="row">
+            <div class="col-md-3">
+                <div class="mv-input-container">
+                    <input type="text" class="mv-input" id="k" placeholder="Ex: José"/>
+                    <span class="input-border"></span>
+                    <label class="mv-label" for="k">Nome</label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mv-input-container">
+                    <input type="text" class="mv-input"/>
+                    <span class="input-border"></span>
+                    <label class="mv-label" for="f">Sobrenome</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="mv-input-container">
+                    <input type="email" class="mv-input"/>
+                    <span class="input-border"></span>
+                    <label class="mv-label" for="f">Email</label>
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="mv-input-container">
+                    <input type="password" class="mv-input" id="pass"/>
+                    <span class="input-border"></span>
+                    <object class="mv-password-reveal" data="./assets/eye.svg" id="revealPass" type="image/svg+xml"></object>
+                    <span class="mv-password-strength">forte</span>
+                    <label class="mv-label" for="pass">Senha</label>
+                </div>
+            </div>
+        </div>
+    
+        <br><br>
+    
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mv-input-container">
+                    <input type="checkbox" class="mv-input" id="cb" name="cb"/><label class="mv-label" for="cb">checkbox</label>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="home">
+
+        <nav id="headNavbar" class="head-navbar">
+            <div class="navbar-logo">
+                <a class="js-scroll-trigger" href="#home"><img src="./assets/move-logo-icon--grey-05.svg"/></a>
+            </div>
+
+            <ul class="head-menu">
+                <li><a class="js-scroll-trigger" href="/docs/intro.html">Documentação</a></li>
+                <li><a class="js-scroll-trigger" href="/example/example.html" target="_blank">Exemplo</a></li>
+            </ul>
+
+            <div class="head-download-button">
+                <img class="github-logo" src="./assets/github-logo-04.svg"/>
+                <button class="mv-button">Download</button>
+            </div>
+        </nav>
+
+        
+        <div class="head-background">
+            <div class="head-container">
+                <div class="head-content">
+                    <img class="logo" src="./assets/move-logotype-horizontal--grey-03.svg"/>
+                    <span class="desc">É uma biblioteca de componentes web open source que disponibiliza código HTML, CSS e JavaScript para desenvolvimento de interfaces de usuário usando componentes com princípios básicos de animação.</span>
+                    <div class="row action-button">
+                        <div class="col-md-6">
+                            <button class="mv-button">Download</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="head-content">
+                    <img class='logo-animation' src="./assets/move-logo-icon--grey-05 - Copia.svg"/>
+                </div>
+            </div> 
+        </div>
+
+    </div>
+
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./dist/js/move.min.js"></script>
+    <script src="./assets/scripts/jquery.easing.min.js"></script>
+    <script src="./assets/scripts/jquery.scrollTo.min.js"></script>
+    <script src="./index.js"></script>
+
+    <script>
+
+        // var strongPasswordIndicator = '<span class="mv-password-strengh-indicator">forte</span>';
+
+        // var strongPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+        // $("#pass").keyup(function(evt) {
+        //     if(strongPassword.test(evt.target.value)){
+        //         $(this).parent().addClass('mv-input-success');
+        //         var passParent = $(this).parent('.mv-input-container');
+        //         $(strongPasswordIndicator).insertAfter(passParent);
+        //         console.log($(passParent).children());
+        //         // if($(passParent).children(".mv-password-strengh-indicator")){
+        //         // } else{
+        //         // }
+        //     }
+        // })
+        $('#ok').click(function() {
+            $(this).trigger('submitting');
+            setTimeout(() => {
+                $(this).trigger('submitedSuccess');
+            }, 3000);
+        })
+        $('#error').click(function() {
+            $(this).trigger('submitting');
+            setTimeout(() => {
+                $(this).trigger('submitedError');
+            }, 3000);
+        })
+
+    </script>
 </body>
 </html>

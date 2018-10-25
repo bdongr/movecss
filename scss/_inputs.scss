@@ -1,0 +1,232 @@
+.mv-input-container {
+    cursor: text;
+    font-family: $mv-input-font;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &>.mv-label{
+        margin-bottom: 0;
+        margin-top: $mv-label-margin-top;
+        display: block;
+        font-size: $mv-label-font-size;
+        font-weight: $mv-label-font-weight;
+        transition: 0.3s ease-in-out;
+        color: $mv-dark-grey;
+    }
+
+    &>.mv-input{
+        width: 100%;
+        padding-left: $mv-input-padding-left-right;
+        padding-right: $mv-input-padding-left-right;
+        padding-top: $mv-input-padding-top-bottom;
+        padding-bottom: $mv-input-padding-top-bottom;
+        border: 0;
+        border-bottom: $mv-input-border-bottom-width solid $mv-light-grey;
+        font-family: $mv-input-font;
+        color: $mv-dark;
+        transition: border-bottom 0.3s ease-in-out;
+        &:active, &:focus{
+            outline: none            
+        }
+        &:focus{
+            border-bottom: $mv-input-border-bottom-width solid transparent;
+        }
+        &:focus + .input-border::before {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        &:focus ~ .mv-label {
+            color: $mv-default;
+        }
+
+        //CHECKBOX INPUT 
+        &[type="checkbox"]{
+            display: inline;
+            opacity: 0;
+            padding: 0px;
+            width: auto;
+            border: none;
+
+            & + .mv-label {
+                display: inline-block;
+                margin: 0;
+                font-weight: normal;
+                margin-left: 20px;
+                font-size: 16px;
+                cursor: pointer;
+                padding-bottom: 10px;
+                padding-top: 10px;
+
+                &::before{
+                    content: '';
+                    // background-color: red;
+                    border: 2px solid rgb(223, 223, 223);
+                    border-radius: 5px;
+                    left: 0px;
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    transition: 0.3s ease-in-out;
+                }
+                
+                & > .tick-checkbox{
+                    position: absolute;
+                    left: 0;
+                    height: 55%;
+                }
+                & > .tick-checkbox-hide{
+                    animation: hide-scale;
+                    animation-duration: 300ms;
+                }
+            }
+
+            &:focus ~ .mv-label::before{
+                border: 2px solid $mv-default;
+            }
+        }
+
+
+        //RADIO INPUT
+        &[type="radio"]{
+            display: inline;
+            opacity: 0;
+            padding: 0px;
+            width: auto;
+            border: none;
+
+            & + .mv-label {
+                display: inline-block;
+                margin: 0;
+                font-weight: normal;
+                margin-left: 20px;
+                font-size: 16px;
+                cursor: pointer;
+                padding-bottom: 10px;
+                padding-top: 10px;
+
+                &::before{
+                    content: '';
+                    // background-color: red;
+                    border: 2px solid rgb(223, 223, 223);
+                    border-radius: 100%;
+                    left: 0px;
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    transition: 0.3s ease-in-out;
+                }
+                
+                & > .dot-radio{
+                    height: 15px;
+                    width: 15px;
+                    // z-index: -1;
+                    background: $mv-default;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 5px;
+                    display: inline-block;
+                    bottom: 14px;
+                    animation: show-scale;
+                    animation-duration: 300ms;
+                }
+                & > .dot-radio-hide{
+                    animation: hide-scale;
+                    animation-duration: 300ms;
+                }
+            }
+
+            &:focus ~ .mv-label::before{
+                border: 2px solid $mv-default;
+            }
+        }
+    }
+
+    &>.input-border::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: $input-border-before-width;
+        border-bottom: $input-border-width-before solid $mv-default;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &>.mv-password-reveal{
+        position: absolute;
+        cursor: pointer;
+        width: $mv-password-reveal-size;
+        height: $mv-password-reveal-size;
+        top: 10px;
+        right: 0;
+    }
+
+    &>.mv-password-strength{
+        position: absolute;
+        font-weight: 600;
+        font-size: 14px;
+        color: $mv-default;
+        right: 0;
+        display: none;
+        &.weak{
+            color: $mv-error;
+            display: inline-block;
+        }
+        &.mid{
+            color: $mv-alert;
+            display: inline-block;
+        }
+        &.strong{
+            color: $mv-success;
+            display: inline-block;
+        }
+    }
+
+    //SUCCESS
+    &.mv-input-success{
+        &>.mv-input{
+            &:focus ~ .mv-label {
+                color: $mv-success;
+            }
+        }
+        &>.input-border::before{
+            border-bottom-color: $mv-success;
+        }
+    }
+
+    //ALERT
+    &.mv-input-alert{
+        &>.mv-input{
+            &:focus ~ .mv-label {
+                color: $mv-alert;
+            }
+        }
+        &>.input-border::before{
+            border-bottom-color: $mv-alert;
+        }
+    }
+
+    //ERROR
+    &.mv-input-error{
+        &>.mv-input{
+            &:focus ~ .mv-label {
+                color: $mv-error;
+            }
+        }
+        &>.input-border::before{
+            border-bottom-color: $mv-error;
+        }
+    }
+
+}
+
+@keyframes hide-scale {
+    from{transform: scale(1)}
+    to{transform: scale(0)}
+}
+@keyframes show-scale {
+    from{transform: scale(0)}
+    to{transform: scale(1)}
+}

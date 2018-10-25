@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../dist/css/move.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="./intro.css">
+    <title>Move.CSS | Docs</title>
+</head>
+<body>
+
+    <nav id="headNavbar" class="head-navbar head-navbar--shrink">
+        <div class="navbar-logo">
+            <a class="js-scroll-trigger" href="/"><img src="../assets/move-logo-icon--grey-05.svg"/></a>
+        </div>
+
+        <ul class="head-menu">
+            <li><a class="js-scroll-trigger" href="/docs/intro.html">Documentação</a></li>
+            <li><a class="js-scroll-trigger" href="/example/example.html" target="_blank">Exemplo</a></li>
+        </ul>
+
+        <div class="head-download-button">
+            <img class="github-logo" src="../assets/github-logo-04.svg"/>
+            <button class="mv-button">Download</button>
+        </div>
+    </nav>
+
+    <div id="doc">
+        <div class="doc-background">
+            <div class="doc-container">
+                <aside class="doc-side-nav">
+                        <div class="content">
+                            <div class="session">
+                                <span><a href="/docs/intro.html">Introdução</a></span>
+                                <ul>
+                                    <li><a href="/docs/intro.html#uso">uso</a></li>
+                                    <li><a href="/docs/intro.html#template-basico">template básico</a></li>
+                                    <li><a href="/docs/intro.html#download">download</a></li>
+                                </ul>
+                            </div>
+                            <div class="session">
+                                <span><a href="/docs/components.html">Componentes</a></span>
+                                <ul>
+                                    <li><a href="/docs/components.html#botoes">botões</a></li>
+                                    <li><a href="/docs/components.html.html#inputs">inputs</a></li>
+                                    <li class="subitem"><a href="/docs/components.html.html#input-text">input text</a></li>
+                                    <li class="subitem"><a href="/docs/components.html.html#input-password">input password</a></li>
+                                    <li class="subitem"><a href="/docs/components.html.html#input-checkbox">input checkbox</a></li>
+                                    <li class="subitem"><a href="/docs/components.html.html#input-radio">input radio</a></li>
+                                </ul>
+                            </div>
+                            <div class="separator-right"></div>
+                        </div>
+                    </aside>
+
+                <div class="doc-container-right">
+                    <div class="session" id="introduction">
+                        <span class="sessionTitle">Introdução</span>
+                        <span class="sessionDesc">A Move.CSS é uma biblioteca de componentes web open source que disponibiliza código HTML, CSS e JavaScript para desenvolvimento de interfaces de usuário usando componentes com princípios básicos de animação.</span>
+                        
+                        <div class="subsession" id="uso">
+                            <span class="sessionTitle">Uso</span>
+                            <span class="sessionDesc">Para usar a Move.CSS é necessário importar a folha de estilo CSS através da tag link</span>
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><!-- Link para importar a versão 1 da Move.CSS -->
+<link rel="stylesheet" href="CSS_DA_MOVE_LINK"></xmp>
+                            </div>
+                            <span class="sessionDesc">Além da folha de estilo CSS é necessário importar também o arquivo JavaScript da biblioteca através da tag script. A Move.CSS utiliza o jQuery portanto é necessário importá-lo também.</span>
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><!-- Link para importar a versão 3.3.1 do jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<!-- Link para importar a versão 1 da Move.CSS -->
+<script src="JS_DA_MOVE_LINK"></script></xmp>
+                            </div>
+                        </div>
+
+                        <div class="subsession" id="template-basico">
+                            <span class="sessionTitle">Template Básico</span>
+                            <span class="sessionDesc">A seguir um exemplo de um arquivo HTML com os arquivos necessários para o uso da biblioteca importados</span>
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Move.CSS -->
+        <link rel="stylesheet" href="CSS_DA_MOVE_LINK">
+
+        <title>Hello, world!</title>
+    </head>
+    <body>
+        <h1>Hello, world!</h1>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        
+        <!-- Move.CSS -->
+        <script src="JS_DA_MOVE_LINK"></script>
+    </body>
+</html></xmp>
+                            </div>
+                        </div>
+
+                        <div class="subsession" id="download">
+                            <span class="sessionTitle">Download</span>
+                            <span class="sessionDesc">Além do import através dos links você também pode baixar os arquivos da biblioteca e tê-los localmente. Na pasta você encontra-rá os seguintes arquivos.</span>
+                            <div class="code-block">
+<xmp>movecss/
+---- css/
+-------- move.min.css
+-------- move.css
+---- js/
+-------- move.min.js
+-------- move.js</xmp>
+                            </div>  
+                            <span class="sessionDesc">Você pode baixar os arquivos da Move.CSS a seguir</span>
+                            <br>
+                            <button class="mv-button default">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../dist/js/move.min.js"></script>
+    <script src="../assets/scripts/jquery.easing.min.js"></script>
+    <script src="../assets/scripts/jquery.scrollTo.min.js"></script>
+    <script src="../index.js"></script>
+</body>
+</html>

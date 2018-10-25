@@ -2,3 +2,7 @@
     border-radius: $border-radius;
     padding: $padding-y $padding-x;
 }
+
+@mixin mv-secondary-button-border($border-width, $boder-color) {
+    border: $border-width solid $boder-color;
+}

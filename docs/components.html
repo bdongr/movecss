@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../dist/css/move.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="./components.css">
+    <link rel="stylesheet" href="./intro.css">
+    <title>Move.CSS | Docs</title>
+</head>
+<body>
+    <nav id="headNavbar" class="head-navbar head-navbar--shrink">
+        <div class="navbar-logo">
+            <a class="js-scroll-trigger" href="/"><img src="../assets/move-logo-icon--grey-05.svg"/></a>
+        </div>
+
+        <ul class="head-menu">
+            <li><a class="js-scroll-trigger" href="/docs/intro.html">Documentação</a></li>
+            <li><a class="js-scroll-trigger" href="/example/example.html" target="_blank">Exemplo</a></li>
+        </ul>
+
+        <div class="head-download-button">
+            <img class="github-logo" src="../assets/github-logo-04.svg"/>
+            <button class="mv-button">Download</button>
+        </div>
+    </nav>
+
+    <div id="doc">
+        <div class="doc-background">
+            <div class="doc-container">
+                <aside class="doc-side-nav">
+                    <div class="content">
+                        <div class="session">
+                            <span><a href="/docs/intro.html">Introdução</a></span>
+                            <ul>
+                                <li><a href="/docs/intro.html#about">sobre</a></li>
+                                <li><a href="/docs/intro.html#content">conteúdo</a></li>
+                                <li><a href="/docs/intro.html#download">download</a></li>
+                            </ul>
+                        </div>
+                        <div class="session">
+                            <span><a href="/docs/components.html">Componentes</a></span>
+                            <ul>
+                                <li><a href="#botoes">botões</a></li>
+                                <li><a href="#inputs">inputs</a></li>
+                                <li class="subitem"><a href="#input-text">input text</a></li>
+                                <li class="subitem"><a href="#input-password">input password</a></li>
+                                <li class="subitem"><a href="#input-checkbox">input checkbox</a></li>
+                                <li class="subitem"><a href="#input-radio">input radio</a></li>
+                            </ul>
+                        </div>
+                        <div class="separator-right"></div>
+                    </div>
+                </aside>
+
+                <div class="doc-container-right">
+                    <div class="session" id="componentes">
+                        <span class="sessionTitle">Componentes</span>
+                        <span class="sessionDesc">Na versão 1 a Move.CSS possui componentes básicos para estilização de inputs para formulários.</span>
+                        
+                        <div class="subsession" id="botoes">
+                            <span class="sessionTitle">Botões</span>
+                            <span class="sessionDesc">Os botões da Move.CSS possuem variações nas 4 cores definidas pela biblioteca</span>
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><button class="mv-button default">padrão</button>
+<button class="mv-button success">sucesso</button>
+<button class="mv-button alert">alerta</button>
+<button class="mv-button error">erro</button></xmp>
+                            </div>
+                            <button class="mv-button default">padrão</button>
+                            <button class="mv-button success">sucesso</button>
+                            <button class="mv-button alert">alerta</button>
+                            <button class="mv-button error">erro</button>
+
+                            <span class="sessionDesc">A Move.CSS também possui classes para botões de ação secundários</span>
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><button class="mv-button default-secondary">padrão</button>
+<button class="mv-button success-secondary">sucesso</button>
+<button class="mv-button alert-secondary">alerta</button>
+<button class="mv-button error-secondary">erro</button></xmp>
+                            </div>
+                            <button class="mv-button default-secondary">padrão</button>
+                            <button class="mv-button success-secondary">sucesso</button>
+                            <button class="mv-button alert-secondary">alerta</button>
+                            <button class="mv-button error-secondary">erro</button>
+                            
+                            <span class="sessionDesc">Além de botões para ações genéricas, a Move.CSS possui botões do tipo submit usados para envio de formulários, estes com classes para feedback em caso de sucesso e erro</span>
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><button class="mv-button submit" type="submit" id="ok">enviar sucesso</button>
+<button class="mv-button submit" type="submit" id="error">enviar erro</button></xmp>
+                            </div>
+
+                            <span class="sessionDesc">Para exibir os feedbacks de sucesso e erro é necessário o uso do Jquery para alternar entre as classes submitting e submitedError ou submitedSuccess após a resposta da submissão</span>
+
+                            <div class="code-block">
+<xmp class="prettyprint lang-javascript">//Chamar função de submitting ao clicar no botão desejado
+$("#enviar").trigger('submitting');
+//Chamar função de sucesso ou erro após a resposta da submissão
+$("#enviar").trigger('submitedSuccess');
+$("#enviar").trigger('submitedError');</xmp>
+                            </div>
+                            <button class="mv-button submit" type="submit" id="ok">enviar sucesso</button>
+                            <button class="mv-button submit" type="submit" id="error">enviar erro</button>
+                        </div>
+
+                        <div class="subsession" id="inputs">
+                            <span class="sessionTitle">Inputs</span>
+                            <span class="sessionDesc">Os componentes de input da Move.CSS devem ser filhos de um elemento div com a classe mv-input-container, este por sua vez possui a largura máxima do elemento pai, portanto é possível defini-lo como filho de uma coluna bootstrap, por exemplo.</span>
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><div class="col-md-3">
+    <div class="mv-input-container">
+    </div>
+</div></xmp>
+                            </div>
+                            <span class="sessionDesc"><b>Os inputs tipo: text, password, email, checkbox e radio devem estar dentro de uma classe mv-input-container.</b></span>
+                        </div>
+
+                        <div class="subsession" id="input-text">
+                            <span class="sessionTitle">Input text</span>
+                            <span class="sessionDesc">Os componentes de input do tipo text podem receber todas as propriedades da tag input, e devem ser seguidos por um elemento div com a classe input-border, e opcionalmente por um elemento label com a classe mv-label e demais propriedades da tag label.</span>
+
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><div class="col-md-3">
+    <div class="mv-input-container">
+        <input type="text" class="mv-input" id="nome" placeholder="Ex: José"/>
+        <div class="input-border"></div>
+        <label class="mv-label" for="nome">Nome</label>
+    </div>
+</div></xmp>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="mv-input-container">
+                                        <input type="text" class="mv-input" id="k" placeholder="Ex: José"/>
+                                        <div class="input-border"></div>
+                                        <label class="mv-label" for="k">Nome</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subsession" id="input-password">
+                            <span class="sessionTitle">Input password</span>
+                            <span class="sessionDesc">Os components de input do tipo password contam um password reveal, para o usá-lo é necessário adicionar ao projeto o arquivo SVG disponível na pasta assets da biblioteca e referenciá-lo em uma tag object com a classe mv-password-reveal.</span>
+                            
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><div class="col-md-3">
+    <div class="mv-input-container">
+        <input type="password" class="mv-input" data-reveal="true" id="pass"/>
+        <span class="input-border"></span>
+        <label class="mv-label" for="pass">Senha</label>
+    </div>
+</div></xmp>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="mv-input-container">
+                                        <input type="password" class="mv-input" data-reveal="true" id="pass"/>
+                                        <span class="input-border"></span>
+                                        <label class="mv-label" for="pass">Senha</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <span class="sessionDesc">Além do password reveal, os componentes de input tipo password também podem possuir um elemento de de validação da força da senha com as classes mv-password-strength + a classe referente a força da senha inserida.</span>
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><div class="mv-input-container">
+    <input type="password" class="mv-input" data-reveal="true" id="pass"/>
+    <span class="input-border"></span>
+    <span class="mv-password-strength strong">forte</span>
+    <label class="mv-label" for="pass">Senha</label>
+</div>
+<div class="mv-input-container">
+    <input type="password" class="mv-input" data-reveal="true" id="pass2"/>
+    <span class="input-border"></span>
+    <span class="mv-password-strength mid">média</span>
+    <label class="mv-label" for="pass">Senha</label>
+</div>
+<div class="mv-input-container">
+    <input type="password" class="mv-input" data-reveal="true" id="pass3"/>
+    <span class="input-border"></span>
+    <span class="mv-password-strength weak">fraca</span>
+    <label class="mv-label" for="pass">Senha</label>
+</div></xmp>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="mv-input-container mv-input-success">
+                                        <input type="password" class="mv-input" data-reveal="true" id="pass2"/>
+                                        <span class="input-border"></span>
+                                        <span class="mv-password-strength strong">forte</span>
+                                        <label class="mv-label" for="pass">Senha</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mv-input-container mv-input-alert">
+                                        <input type="password" class="mv-input" data-reveal="true" id="pass3"/>
+                                        <span class="input-border"></span>
+                                        <span class="mv-password-strength mid">média</span>
+                                        <label class="mv-label" for="pass">Senha</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mv-input-container mv-input-error">
+                                        <input type="password" class="mv-input" data-reveal="true" id="pass4"/>
+                                        <span class="input-border"></span>
+                                        <span class="mv-password-strength weak">fraca</span>
+                                        <label class="mv-label" for="pass">Senha</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="subsession" id="input-checkbox">
+                            <span class="sessionTitle">Input checkbox</span>
+                            <span class="sessionDesc">O componente de input tipo checkbox da Move.CSS deve possuir um id e ser seguido por um elemento label que deve referenciar o id do input na propriedade for.</span>
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><div class="mv-input-container">
+    <input type="checkbox" class="mv-input" id="cb" name="cb"/>
+    <label class="mv-label" data-label="checkbox" for="cb">checkbox</label>
+</div></xmp>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mv-input-container">
+                                        <input type="checkbox" class="mv-input" id="cb" name="cb"/>
+                                        <label class="mv-label" data-label="checkbox" for="cb">checkbox</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subsession" id="input-radio">
+                            <span class="sessionTitle">Input radio</span>
+                            <span class="sessionDesc">Semelhante ao input tipo checkbox, o input radio também deve ser seguido por um elemento label.</span>
+                            <div class="code-block">
+<xmp class="prettyprint lang-html"><div class="mv-input-container">
+    <input type="radio" class="mv-input" id="radio" name="radio"/>
+    <label class="mv-label" data-label="radio" for="radio">radio</label>
+</div></xmp>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mv-input-container">
+                                        <input type="radio" class="mv-input" id="radio1" name="radio1"/>
+                                        <label class="mv-label" data-label="radio" for="radio1">radio</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../dist/js/move.min.js"></script>
+    <script>
+        $('#ok').click(function() {
+            $(this).trigger('submitting');
+            setTimeout(() => {
+                $(this).trigger('submitedSuccess');
+            }, 3000);
+        })
+        $('#error').click(function() {
+            $(this).trigger('submitting');
+            setTimeout(() => {
+                $(this).trigger('submitedError');
+            }, 3000);
+        })
+    </script>
+</body>
+</html>

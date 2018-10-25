@@ -1,0 +1,100 @@
+#doc{
+    /* position: relative;*/
+    width: 100vw;
+    height: 100vh; 
+    overflow-x: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+.doc-background{
+    background: #fff;
+    width: 100%;
+    height: 90%;
+    position: absolute;
+}
+
+.doc-container{
+    height: 100%;
+}
+
+.doc-side-nav{
+    width: 17%;
+    height: 100%;
+    position: fixed;
+    padding-top: 20px;
+    display: flex;
+    float: left;
+    border-right: 1px solid var(--medium-grey);
+}
+.doc-side-nav>.content{
+    height: 100%;
+    align-self: center;
+}
+.doc-side-nav>.content>.session{
+    float: left;
+    padding: 20px;
+    padding-left: 30px;
+}
+.doc-side-nav>.content>.session>span{
+    font-weight: 700;
+    font-size: 20px;
+}
+.doc-side-nav>.content>.session>ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    text-transform: capitalize;
+}
+.doc-side-nav>.content>.session>ul>li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.subitem{
+    margin-left: 15px;
+}
+.doc-side-nav>.content>.separator-right{
+    display: none;
+    width: 2px;
+    height: 80%;
+    position: absolute;
+    right: 0;
+    background: var(--medium-grey)
+}
+
+.doc-container-right{
+    display: inline-block;
+    width: 83%;
+    /* height: 100%; */
+    padding-left: 60px; 
+    padding-right: 30px; 
+    padding-top: 60px; 
+    padding-bottom: 30px;
+    float: right; 
+    /* overflow-y: scroll; */
+}
+.doc-container-right > .session{
+    width: 100%;
+}
+.doc-container-right > .session > span.sessionTitle,
+.doc-container-right > .session > .subsession > span.sessionTitle{
+    display: block;
+    font-size: 40px;
+}
+.doc-container-right > .session > .subsession > span.sessionTitle{
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+.doc-container-right > .session > span.sessionDesc, 
+.doc-container-right > .session > .subsession > span.sessionDesc{
+    width: 70%;
+    display: block;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.doc-container-right > .session > .subsession > span.sessionDesc{
+    font-size: 18px;
+}
+
