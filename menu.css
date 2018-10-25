@@ -39,7 +39,7 @@
 .head-download-button{
     float: right;
 }
-.head-download-button > .mv-button{
+.head-download-button  .mv-button{
     background: var(--light-grey);
     color: var(--light-green);
 }
